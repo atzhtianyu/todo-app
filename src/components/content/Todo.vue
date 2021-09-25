@@ -41,7 +41,7 @@
 
 <script>
 import { today, tomorrow } from "../../common/utils";
-import Task from "../../components/content/Task.vue";
+import Task from "../../views/detail/childComps/Task.vue";
 export default {
   components: {
     Task,

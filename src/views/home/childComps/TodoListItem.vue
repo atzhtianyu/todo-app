@@ -1,12 +1,12 @@
 <template>
   <div class="todo-item" :class="{ todo__selected: selected }">
-    <div class="todo_head" @click="handleClick">
+    <div class="todo-item_head" @click="handleClick">
       <div class="todo_icon" :style="{ color }">
         <i :class="['fa', `fa-${todo.icon}`]"></i>
       </div>
       <div class="todo_menu"><i class="fa fa-ellipsis-v"></i></div>
     </div>
-    <div class="todo_body">
+    <div class="todo-item_body">
       <p class="todo_tips">{{ todo.tasks.length }} Tasks</p>
       <h3 class="todo_title">{{ todo.name }}</h3>
       <div class="todo_progress">
@@ -69,23 +69,20 @@ export default {
   color: #666;
 }
 
-.todo__selected {
-  visibility: hidden;
-}
-
-.todo_head {
+.todo-item_head {
   display: flex;
   padding: 20px;
   height: 44px;
   justify-content: space-between;
   align-items: flex-start;
-  transform: translate3d(0, 0, 0);
   will-change: transform;
 }
 
-.todo_body {
+.todo-item_body {
+  width: 80%;
+  position: absolute;
+  bottom: 30px;
   padding: 0 20px;
-  transform: translate3d(0, 189px, 0);
   will-change: transform;
 }
 
@@ -136,16 +133,5 @@ export default {
 
 .todo_progress_num {
   font-size: 12px;
-}
-
-.todo_tasks {
-  opacity: 0;
-  transform: scale3d(1, 0, 1);
-}
-
-.todo_subtitle {
-  margin-top: 32px;
-  margin-bottom: 8px;
-  color: #999;
 }
 </style>

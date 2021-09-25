@@ -53,7 +53,7 @@ export default new Vuex.Store({
         colors: ["#5b9df9", "#47bfff"],
       },
       {
-        iid: 3,
+        iid: 2,
         icon: "home",
         name: "Home",
         tasks: [
@@ -74,8 +74,8 @@ export default new Vuex.Store({
     editing: null,
   },
   getters: {
-    currentTodo(state) {
-      return state.todos[state.currentIndex];
+    getTodo(state) {
+      return state.todos;
     },
     todayTasks(state) {
       const tasks = [];
